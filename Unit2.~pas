@@ -1,0 +1,199 @@
+unit Unit2;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls;
+
+type
+  TForm2 = class(TForm)
+    GroupBox1: TGroupBox;
+    a: TRadioButton;
+    b: TRadioButton;
+    c: TRadioButton;
+    d: TRadioButton;
+    Label1: TLabel;
+    Label2: TLabel;
+    Edit1: TEdit;
+    Edit2: TEdit;
+    Label3: TLabel;
+    Label4: TLabel;
+    Button1: TButton;
+    Edit3: TEdit;
+    Label5: TLabel;
+    Label6: TLabel;
+    Edit4: TEdit;
+    Button2: TButton;
+    Label7: TLabel;
+    Edit5: TEdit;
+    Button3: TButton;
+    Button4: TButton;
+    Label8: TLabel;
+    Button5: TButton;
+    procedure aClick(Sender: TObject);
+    procedure bClick(Sender: TObject);
+    procedure cClick(Sender: TObject);
+    procedure dClick(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
+    procedure Button3Click(Sender: TObject);
+    procedure Button4Click(Sender: TObject);
+    procedure z(Sender: TObject; var Key: Char);
+    procedure q(Sender: TObject; var Key: Char);
+    procedure aa(Sender: TObject; var Key: Char);
+    procedure zz(Sender: TObject; var Key: Char);
+    procedure oo(Sender: TObject; var Key: Char);
+    procedure ss(Sender: TObject; var Key: Char);
+    procedure dd(Sender: TObject; var Key: Char);
+    procedure Button5Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form2: TForm2;
+
+implementation
+
+uses Unit1, Unit3;
+
+{$R *.dfm}
+
+procedure TForm2.aClick(Sender: TObject);
+begin
+if a.Checked = true then
+edit1.Text:='6500';
+end;
+
+procedure TForm2.bClick(Sender: TObject);
+begin
+if b.Checked = true then
+edit1.Text:='11800';
+end;
+
+procedure TForm2.cClick(Sender: TObject);
+begin
+if c.Checked = true then
+edit1.Text:='6000';
+end;
+
+procedure TForm2.dClick(Sender: TObject);
+begin
+if d.Checked = true then
+edit1.Text:='7500';
+end;
+
+procedure TForm2.Button1Click(Sender: TObject);
+var
+a,b,c:real;
+begin
+a:=strtofloat(edit1.Text);
+b:=strtofloat(edit2.Text);
+c:=a*b;
+edit3.Text:=floattostr(c);
+
+end;
+
+procedure TForm2.Button2Click(Sender: TObject);
+var
+a,b,c:real;
+begin
+a:=strtofloat(edit3.Text);
+b:=strtofloat(edit4.Text);
+c:=b-a;
+if c>0 then
+begin
+edit5.Text:=floattostr(c);
+end
+else
+begin
+edit5.Text:='UANG KURANG !!';
+end;
+
+end;
+
+procedure TForm2.Button3Click(Sender: TObject);
+begin
+a.Checked:=false;
+b.Checked:=false;
+c.Checked:=false;
+d.Checked:=false;
+edit1.Text:='0';
+edit2.Text:='0';
+edit3.Text:='0';
+edit4.Text:='0';
+edit5.Text:='0';
+end;
+
+procedure TForm2.Button4Click(Sender: TObject);
+begin
+if (application.MessageBox('Apakah Anda Yakin Coy ?','Informasi',MB_YESNO)=IDYES) then
+form1.close;
+form2.Close;
+form3.close;
+end;
+
+procedure TForm2.z(Sender: TObject; var Key: Char);
+begin
+if key=chr(13) then
+begin
+button1.SetFocus;
+end
+end;
+
+procedure TForm2.q(Sender: TObject; var Key: Char);
+begin
+if key=chr(13)  then
+edit2.SetFocus;
+end;
+
+procedure TForm2.aa(Sender: TObject; var Key: Char);
+begin
+if key=chr(13) then
+begin
+edit2.SetFocus;
+end
+end;
+
+procedure TForm2.zz(Sender: TObject; var Key: Char);
+begin
+if key=chr(13)  then
+begin
+edit2.SetFocus;
+end
+end;
+
+procedure TForm2.oo(Sender: TObject; var Key: Char);
+begin
+if key=chr(13) then
+begin
+edit2.SetFocus;
+end
+end;
+
+procedure TForm2.ss(Sender: TObject; var Key: Char);
+begin
+if key=chr(13) then
+begin
+edit4.setfocus;
+end
+end;
+
+procedure TForm2.dd(Sender: TObject; var Key: Char);
+begin
+if key=chr(13) then
+begin
+button2.SetFocus;
+end
+end;
+
+procedure TForm2.Button5Click(Sender: TObject);
+begin
+form2.Hide;
+form1.Close;
+end;
+
+end.

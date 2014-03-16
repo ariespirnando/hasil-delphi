@@ -1,0 +1,176 @@
+unit Unitxx;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, ExtCtrls;
+
+type
+  TForm1 = class(TForm)
+    Edit1: TEdit;
+    Edit2: TEdit;
+    Edit3: TEdit;
+    Edit4: TEdit;
+    Edit5: TEdit;
+    Edit6: TEdit;
+    Edit7: TEdit;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
+    Label6: TLabel;
+    Label7: TLabel;
+    Label8: TLabel;
+    Panel1: TPanel;
+    Label9: TLabel;
+    Edit8: TEdit;
+    Label10: TLabel;
+    Label11: TLabel;
+    Button1: TButton;
+    Button2: TButton;
+    Button3: TButton;
+    Label12: TLabel;
+    procedure Button1Click(Sender: TObject);
+    procedure a(Sender: TObject; var Key: Char);
+    procedure b(Sender: TObject; var Key: Char);
+    procedure c(Sender: TObject; var Key: Char);
+    procedure d(Sender: TObject; var Key: Char);
+    procedure e(Sender: TObject; var Key: Char);
+    procedure f(Sender: TObject; var Key: Char);
+    procedure g(Sender: TObject; var Key: Char);
+    procedure Button2Click(Sender: TObject);
+    procedure Button3Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm1.Button1Click(Sender: TObject);
+var
+a,b,c,d,e,f,g,h,i,j:real;
+begin
+a:=strtofloat(edit3.Text);
+b:=strtofloat(edit4.Text);
+c:=strtofloat(edit7.Text);
+d:=strtofloat(edit6.Text);
+e:=strtofloat(edit5.Text);
+g:=b*0.3;
+h:=c*0.25;
+i:=d*0.25;
+j:=e*0.2;
+f:=g+h+i+j;
+edit8.Text:=floattostr(f);
+if a>16 then
+begin
+if f>85 then
+begin
+label11.Caption:='Grade A';
+end
+else
+if f>75 then
+begin
+label11.Caption:='Grade B';
+end
+else
+if f>65 then
+begin
+label11.Caption:='Grade C';
+end
+else
+if f>55 then
+begin
+label11.Caption:='Grade D';
+end
+else
+begin
+label11.Caption:='Grade E';
+end
+end
+else
+label11.Caption:='Grade E';
+end;
+
+procedure TForm1.a(Sender: TObject; var Key: Char);
+begin
+if key=chr(13) then
+begin
+edit2.SetFocus;
+end
+end;
+
+procedure TForm1.b(Sender: TObject; var Key: Char);
+begin
+if key=chr(13) then
+begin
+edit3.SetFocus;
+end
+end;
+
+procedure TForm1.c(Sender: TObject; var Key: Char);
+begin
+if key=chr(13) then
+begin
+edit4.SetFocus;
+end
+end;
+
+procedure TForm1.d(Sender: TObject; var Key: Char);
+begin
+if key=chr(13) then
+begin
+edit7.SetFocus;
+end
+end;
+
+procedure TForm1.e(Sender: TObject; var Key: Char);
+begin
+if key=chr(13) then
+begin
+edit6.SetFocus;
+end
+end;
+
+procedure TForm1.f(Sender: TObject; var Key: Char);
+begin
+if key=chr(13) then
+begin
+edit5.SetFocus;
+end
+end;
+
+procedure TForm1.g(Sender: TObject; var Key: Char);
+begin
+if key=chr(13) then
+begin
+button1.setfocus;
+end
+end;
+
+procedure TForm1.Button2Click(Sender: TObject);
+begin
+edit1.Text:='';
+edit2.Text:='';
+edit3.Text:='0';
+edit4.Text:='0';
+edit5.Text:='0';
+edit6.Text:='0';
+edit7.Text:='0';
+label11.Caption:='';
+end;
+
+procedure TForm1.Button3Click(Sender: TObject);
+begin
+close;
+end;
+
+end.
